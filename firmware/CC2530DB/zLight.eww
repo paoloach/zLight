@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\zLight.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>ALL</name>
+       <member>
+        <project>zLight</project>
+        <configuration>EndDeviceEB</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

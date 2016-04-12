@@ -1,47 +1,46 @@
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+gEDA/*.sch~
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+*.r51
+*.pbi
+*.s51
+*.lst
+*.map
+*.pbd
+firmware/CC2530DB/RouterEB/List/*
+firmware/CC2530DB/RouterEB/Obj/*
+firmware/CC2530DB/RouterEB/Exe/*
+firmware/CC2530DB/testCS5463/*
 
-# Folder config file
-Desktop.ini
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
 
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
 
-# Windows shortcuts
-*.lnk
+# Precompiled Headers
+*.gch
+*.pch
 
-# =========================
-# Operating System Files
-# =========================
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
 
-# OSX
-# =========================
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
 
-.DS_Store
-.AppleDouble
-.LSOverride
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
 
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# Debug files
+*.dSYM/
