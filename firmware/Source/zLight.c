@@ -79,6 +79,7 @@ void powerMeter_Init( byte task_id ){
  	identifyInit(zPowerMeterTaskID);
 	onOffInit();
 	ZMacSetTransmitPower(TX_PWR_PLUS_3);
+	fastBlinkOn();
 }
 
 /*********************************************************************
@@ -92,6 +93,7 @@ void powerMeter_Init( byte task_id ){
  */
 uint16 powerMeterEventLoop( uint8 task_id, uint16 events ){
 	afIncomingMSGPacket_t *MSGpkt;
+	devStates_t zclSampleSw_NwkState;
   
 	  (void)task_id;  // Intentionally unreferenced parameter
 	 if ( events & SYS_EVENT_MSG ){
@@ -101,6 +103,11 @@ uint16 powerMeterEventLoop( uint8 task_id, uint16 events ){
           			// Incoming ZCL Foundation command/response messages
           			zPowerMeter_ProcessIncomingMsg( (zclIncomingMsg_t *)MSGpkt );
           			break;
+				case ZDO_STATE_CHANGE:
+          			zclSampleSw_NwkState = (devStates_t)(MSGpkt->hdr.status);
+					if (zclSampleSw_NwkState == DEV_ROUTER){
+						fastBlinkOff();
+					}
 		       default:
         		  break;
       		}

@@ -73,9 +73,7 @@ static void BOARD_INIT(void)
   uint16 i;    
   
                                                                    
-  HAL_TURN_ON_LED1();                                           
-  HAL_TURN_OFF_LED2();                                           
-  HAL_TURN_ON_LED3();                                           
+                                           
                                                                  
   SLEEPCMD &= ~OSC_PD;                       /* turn on 16MHz RC and 32MHz XOSC */                
   while (!(SLEEPSTA & XOSC_STB));            /* wait for 32MHz XOSC stable */                     
@@ -88,12 +86,7 @@ static void BOARD_INIT(void)
   /* Turn on cache prefetch mode */                              
   PREFETCH_ENABLE();                                             
                                                                  
-  HAL_TURN_ON_LED1();                                           
-  LED1_DDR |= LED1_BV;                                           
-  HAL_TURN_ON_LED2();                                           
-  LED2_DDR |= LED2_BV;                                           
-  HAL_TURN_ON_LED3();                                           
-  LED3_DDR |= LED3_BV;                                           
+                                      
                                                                  
   /* configure tristates */                                      
   P0INP |= PUSH2_BV;                                             

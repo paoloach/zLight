@@ -16,8 +16,8 @@
 const uint8 HWRevision = 1;
 const uint8 ZCLVersion = 1;
 const uint8 manufacturerName[] = { 20, 'A','c','h','d','j','i','a','n',' ','T','e','s','t',' ',' ',' ',' ',' ',' ',' ' };
-const uint8 modelId[] = { 16,'z', 'P','o','w','e','r','M','e','t','e','r',' ',' ',' ',' ',' ' };
-const uint8 dateCode[] = { 16, '2','0','1','5','1','0','1','3',' ',' ',' ',' ',' ',' ',' ',' ' };
+const uint8 modelId[] = { 16,'z', 'L','i','g','t','h',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };
+const uint8 dateCode[] = { 16, '2','0','1','6','0','4','1','2',' ',' ',' ',' ',' ',' ',' ',' ' };
 const uint8 powerSource = POWER_SOURCE_DC;
 
 uint8 locationDescription[17] = { 16, ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };

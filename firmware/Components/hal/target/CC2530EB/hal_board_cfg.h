@@ -107,23 +107,6 @@
 
 #define HAL_LED_BLINK_DELAY()   st( { volatile uint32 i; for (i=0; i<0x5800; i++) { }; } )
 
-/* 1 - Green */
-#define LED1_BV           BV(0)
-#define LED1_SBIT         P1_0
-#define LED1_DDR          P1DIR
-#define LED1_POLARITY     ACTIVE_HIGH
-
-  /* 2 - Red */
-  #define LED2_BV           BV(1)
-  #define LED2_SBIT         P1_1
-  #define LED2_DDR          P1DIR
-  #define LED2_POLARITY     ACTIVE_HIGH
-
-  /* 3 - Yellow */
-  #define LED3_BV           BV(4)
-  #define LED3_SBIT         P1_4
-  #define LED3_DDR          P1DIR
-  #define LED3_POLARITY     ACTIVE_HIGH
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -237,7 +220,7 @@ extern void MAC_RfFrontendSetup(void);
 #define HAL_BOARD_INIT()                                         \
 {                                                                \
   uint16 i;                                                      \
-                                                                 \
+                                                                \
   SLEEPCMD &= ~OSC_PD;                       /* turn on 16MHz RC and 32MHz XOSC */                \
   while (!(SLEEPSTA & XOSC_STB));            /* wait for 32MHz XOSC stable */                     \
   asm("NOP");                                /* chip bug workaround */                            \
@@ -249,12 +232,7 @@ extern void MAC_RfFrontendSetup(void);
   /* Turn on cache prefetch mode */                              \
   PREFETCH_ENABLE();                                             \
                                                                  \
-  HAL_TURN_OFF_LED1();                                           \
-  LED1_DDR |= LED1_BV;                                           \
-  HAL_TURN_OFF_LED2();                                           \
-  LED2_DDR |= LED2_BV;                                           \
-  HAL_TURN_OFF_LED3();                                           \
-  LED3_DDR |= LED3_BV;                                           \
+							                                       \
                                                                  \
   /* configure tristates */                                      \
   P0INP |= PUSH2_BV;                                             \

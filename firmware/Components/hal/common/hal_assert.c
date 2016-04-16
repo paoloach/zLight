@@ -125,10 +125,7 @@ void halAssertHazardLights(void)
    */
   HAL_BOARD_INIT();
 
-  HAL_TURN_OFF_LED1();
-  HAL_TURN_OFF_LED2();
-  HAL_TURN_OFF_LED3();
-  HAL_TURN_OFF_LED4();
+
 
   /*-------------------------------------------------------------------------------
    *  Master infinite loop.
@@ -142,21 +139,9 @@ void halAssertHazardLights(void)
      */
     do
     {
-      HAL_LED_BLINK_DELAY();
 
       /* toggle LEDS, the #ifdefs are in case HAL has logically remapped non-existent LEDs */
-#if (HAL_NUM_LEDS >= 1)
-      HAL_TOGGLE_LED1();
-#if (HAL_NUM_LEDS >= 2)
-      HAL_TOGGLE_LED2();
-#if (HAL_NUM_LEDS >= 3)
-      HAL_TOGGLE_LED3();
-#if (HAL_NUM_LEDS >= 4)
-      HAL_TOGGLE_LED4();
-#endif
-#endif
-#endif
-#endif
+
 
       /* escape hatch to continue execution, set escape to '1' to continue execution */
       {
@@ -183,12 +168,6 @@ void halAssertHazardLights(void)
     /*-------------------------------------------------------------------------------
      *  Just exited from "hazard lights" loop.
      */
-
-    /* turn off all LEDs */
-    HAL_TURN_OFF_LED1();
-    HAL_TURN_OFF_LED2();
-    HAL_TURN_OFF_LED3();
-    HAL_TURN_OFF_LED4();
 
     /* wait for button release */
     HAL_DEBOUNCE(!HAL_PUSH_BUTTON1());
@@ -239,37 +218,7 @@ void halAssertHazardLights(void)
         while(!HAL_PUSH_BUTTON1());
 
         /* turn on all LEDs for first bit of byte, turn on three LEDs if not first bit */
-        HAL_TURN_ON_LED1();
-        HAL_TURN_ON_LED2();
-        HAL_TURN_ON_LED3();
-        if (iBit == 0)
-        {
-          HAL_TURN_ON_LED4();
-        }
-        else
-        {
-          HAL_TURN_OFF_LED4();
-        }
-
-        /* wait for debounced key release */
-        HAL_DEBOUNCE(!HAL_PUSH_BUTTON1());
-
-        /* turn off all LEDs */
-        HAL_TURN_OFF_LED1();
-        HAL_TURN_OFF_LED2();
-        HAL_TURN_OFF_LED3();
-        HAL_TURN_OFF_LED4();
-
-        /* output value of data bit to LED1 */
-        if (debugData[iByte] & (1 << (7 - iBit)))
-        {
-          HAL_TURN_ON_LED1();
-        }
-        else
-        {
-          HAL_TURN_OFF_LED1();
-        }
-
+      
         /* advance to next bit */
         iBit++;
         if (iBit == 8)
@@ -285,7 +234,7 @@ void halAssertHazardLights(void)
      *  displayed happened to be one.  This guarantees all LEDs are off at the start of
      *  the flashing loop which uses a toggle operation to change LED states.
      */
-    HAL_TURN_OFF_LED1();
+
   }
 }
 #endif

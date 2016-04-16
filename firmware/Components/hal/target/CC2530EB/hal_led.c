@@ -473,11 +473,6 @@ void HalLedEnterSleep( void )
 
 #if (HAL_LED == TRUE)
   /* Save the state of each led */
-  HalSleepLedState = 0;
-  HalSleepLedState |= HAL_STATE_LED1();
-  HalSleepLedState |= HAL_STATE_LED2() << 1;
-  HalSleepLedState |= HAL_STATE_LED3() << 2;
-  HalSleepLedState |= HAL_STATE_LED4() << 3;
 
   /* TURN OFF all LEDs to save power */
   HalLedOnOff (HAL_LED_ALL, HAL_LED_MODE_OFF);
