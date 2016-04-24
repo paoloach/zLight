@@ -78,7 +78,7 @@ void powerMeter_Init( byte task_id ){
   	EA=1;
  	identifyInit(zPowerMeterTaskID);
 	onOffInit();
-	ZMacSetTransmitPower(TX_PWR_PLUS_3);
+	ZMacSetTransmitPower(TX_PWR_PLUS_19);
 	fastBlinkOn();
 }
 
