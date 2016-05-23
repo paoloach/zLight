@@ -10,6 +10,7 @@ gEDA/*.sch~
 *.lst
 *.map
 *.pbd
+*.sch#
 firmware/CC2530DB/RouterEB/List/*
 firmware/CC2530DB/RouterEB/Obj/*
 firmware/CC2530DB/RouterEB/Exe/*
