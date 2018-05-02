@@ -256,8 +256,7 @@ extern void MAC_RfFrontendSetup(void);
   /* Turn on cache prefetch mode */                              \
   PREFETCH_ENABLE();                                             \
                                                                  \
-  LED1_DDR |= LED1_BV;                                           \
-                                                                 \
+                                                                  \
   /* Set PA/LNA HGM control P0_7 */                              \
   P0DIR |= BV(7);                                                \
                                                                  \

@@ -292,6 +292,7 @@
           <state>HAL_LED=FALSE</state>
           <state>HAL_BOARD_CC2530EB_REV17</state>
           <state>TC_LINKKEY_JOIN</state>
+          <state>HAL_PA_LNA_CC2590</state>
           <state>NV_INIT</state>
           <state>NV_RESTORE</state>
           <state>MULTICAST_ENABLED=FALSE</state>
